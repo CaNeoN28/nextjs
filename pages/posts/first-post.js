@@ -2,26 +2,22 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 //import Script from "next/script";
-import Layout from "../../components/layout";
+import Layout, { siteTitle } from "../../components/layout";
+import utilStyles from "../../styles/utils.module.css";
 
 export default function FirstPost() {
   return (
-    <Layout>
+    <Layout home>
       <Head>
-        <title>First Post</title>
+        <title>{siteTitle}</title>
       </Head>
-
-      <Image
-        src="/images/profile.jpeg"
-        width={240}
-        height={240}
-        alt="Carlos Felipe" />
-      <h1>
-        First Post!
-      </h1>
-      <h2>
-        <Link href="/">Back to home</Link>
-      </h2>
+      <section className={utilStyles.headingMd}>
+        <p>Im Carlos Felipe</p>
+        <p>
+          (This is a sample website - you’ll be building a site like this on{' '}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
+      </section>
     </Layout>
   )
 }
